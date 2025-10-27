@@ -9,7 +9,6 @@ from textblob import TextBlob
 
 app = FastAPI(title="AI Sentiment Effect Detector")
 
-# Simple cache for last 5 predictions
 cache = deque(maxlen=5)
 
 class TextInput(BaseModel):
@@ -20,7 +19,6 @@ def analyze_text(data: TextInput):
     start_time = time.time()
     
     try:
-        # Use TextBlob for sentiment analysis
         blob = TextBlob(data.text)
         polarity = blob.sentiment.polarity
         
