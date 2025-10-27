@@ -1,6 +1,6 @@
 # AI Sentiment Detector
 
-A simple API that tells you if text is positive, negative, or neutral. Built with FastAPI and TextBlob.
+A simple API that tells you if text is positive, negative, or neutral.
 
 ## What it does
 
@@ -44,25 +44,11 @@ Send it some text, get back the sentiment. Pretty straightforward!
 }
 ```
 
-### See Recent Analyses
-**GET** `/cache` - Shows the last 5 texts you analyzed
-
-## Example Usage
-
-```bash
-# Check if text is positive
-curl -X POST "http://localhost:8000/analyze" \
-     -H "Content-Type: application/json" \
-     -d '{"text": "This is awesome!"}'
-```
-
 ## Docker
 
 ```bash
 docker build -t sentiment-api .
 docker run -p 8000:8000 sentiment-api
 ```
-
-## That's it!
 
 The API docs at `/docs` will show you everything you need to know. Happy analyzing! 🎉
